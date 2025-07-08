@@ -1,28 +1,54 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React, { useEffect } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import OnboardingScreen from './screens/OnboardingScreen';
+import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen';
+import AdminProductScreen from './screens/AdminProductScreen';
+import UserScreen from './screens/UserScreen';
+import BottomTabNavigator from './src/BottomTabNavigator';
+import { initUserTable,insertUser} from './src/database';
+export type RootStackParamList = {
+  Onboarding: undefined;
+  Login: undefined;
+  Register: undefined;
+  AdminProduct: undefined;
+  UserScreen: undefined;
+  MainTab: undefined;
+};
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+export default function App() {
+  useEffect(() => {
+    const setup = async () => {
+      await initUserTable();
+
+      try {
+        await insertUser('admin@gmail.com', '1', 'admin');
+      } catch (e) {
+        console.log('Admin đã tồn tại');
+      }
+      try {
+        await insertUser('user@gmail.com', '1', 'user');
+      } catch (e) {
+        console.log('User đã tồn tại');
+      }
+    };
+
+    setup();
+  }, []);
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Onboarding" screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Onboarding" component={OnboardingScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen name="AdminProduct" component={AdminProductScreen} />
+        <Stack.Screen name="UserScreen" component={UserScreen} />
+        <Stack.Screen name="MainTab" component={BottomTabNavigator} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-export default App;
