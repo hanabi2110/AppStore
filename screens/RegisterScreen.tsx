@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import {
-  View, Text, TextInput, TouchableOpacity, Image, Alert,
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Image,
+  Alert,
 } from 'react-native';
 import styles from '../Style/StyleRegister';
 import { insertUser } from '../src/database';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../App';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import GoogleLoginButton from './GoogleLoginButton'; 
 
 const RegisterScreen = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
@@ -35,8 +40,6 @@ const RegisterScreen = () => {
 
   return (
     <View style={styles.container}>
-
-
       <Text style={styles.title}>Create Account</Text>
       <Text style={styles.subtitle}>Start learning with create your account!</Text>
 
@@ -77,13 +80,8 @@ const RegisterScreen = () => {
 
       <Text style={styles.orText}>Or using other method</Text>
 
-      <TouchableOpacity style={styles.socialButton}>
-        <Image
-          source={{ uri: 'https://img.icons8.com/color/48/google-logo.png' }}
-          style={styles.icon}
-        />
-        <Text style={styles.socialText}>Sign Up with Google</Text>
-      </TouchableOpacity>
+      {/* ✅ Google login button */}
+      <GoogleLoginButton />
 
       <TouchableOpacity style={styles.socialButton}>
         <Image
@@ -92,11 +90,12 @@ const RegisterScreen = () => {
         />
         <Text style={styles.socialText}>Sign Up with Facebook</Text>
       </TouchableOpacity>
+
       <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.loginRedirect}>
-      <Text style={styles.loginRedirectText}>
-    Already have an account? <Text style={styles.loginRedirectLink}>Log in</Text>
-     </Text>
-    </TouchableOpacity>
+        <Text style={styles.loginRedirectText}>
+          Already have an account? <Text style={styles.loginRedirectLink}>Log in</Text>
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };
