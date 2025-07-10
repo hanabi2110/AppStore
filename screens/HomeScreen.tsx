@@ -1,88 +1,127 @@
-import React, { useState } from 'react';
-import { View, Text, Image, FlatList, TouchableOpacity,
+import React, { useState, useEffect } from 'react';
+import {
+  View, Text, Image, FlatList, TouchableOpacity, ActivityIndicator, StyleSheet,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
-import styles from '../Style/StyleHome'
+import { categoryList } from '../src/CategoryData';
+import styles from '../Style/StyleHome';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../App'; 
 
-const products = [
-  {
-    id: '1',
-    name: 'The Mirac Jiz',
-    brand: 'Lisa Robber',
-    price: '$195.00',
-    image: 'https://pos.nvncdn.com/a83b91-49827/ps/20230405_mys9qRt2vW.jpeg',
-  },
-  {
-    id: '2',
-    name: 'Meriza Kiles',
-    brand: 'Gazuna Resika',
-    price: '$143.45',
-    image: 'https://product.hstatic.net/200000690725/product/tui-xach-nu-thoi-trang-nuc-txc018-1_35318e9e5087409eb5e253901de0db7f_large.jpg',
-  },
-];
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  image: string;
+}
 
 const HomeScreen = () => {
   const [tab, setTab] = useState('Home');
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
+  useEffect(() => {
+    if (tab === 'Home') {
+      fetchProducts();
+    }
+  }, [tab]);
+
+  const fetchProducts = async () => {
+    try {
+      setLoading(true);
+      const res = await fetch("https://fakestoreapi.com/products/category/women's clothing");
+      const json = await res.json();
+      setProducts(json);
+    } catch (err) {
+      console.log('API Error:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const renderProduct = ({ item }: { item: Product }) => (
+    <View style={styles.card}>
+      <Image source={{ uri: item.image }} style={styles.productImage} />
+      <TouchableOpacity style={styles.heartIcon}>
+        <Icon name="heart" size={16} color="#999" />
+      </TouchableOpacity>
+      <Text style={styles.productTitle} numberOfLines={1}>{item.title}</Text>
+      <Text style={styles.productBrand}>Brand Unknown</Text>
+      <Text style={styles.productPrice}>${item.price}</Text>
+    </View>
+  );
 
   return (
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
-        <Image
-          source={{ uri: 'https://randomuser.me/api/portraits/men/1.jpg' }}
-          style={styles.avatar}
-        />
-        <View style={{ flex: 1, marginLeft: 12 }}>
-          <Text style={styles.greeting}>Hi, Jonathan</Text>
+        <Image source={{ uri: 'https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/08/anh-con-meo-cute.jpg' }} style={styles.avatar} />
+        <View style={{ flex: 1, marginLeft: 10 }}>
+          <Text style={styles.greeting}>Hi, Khang</Text>
           <Text style={styles.subGreeting}>Let's go shopping</Text>
         </View>
+        <Icon name="search" size={20} color="#000" style={{ marginRight: 15 }} />
         <Icon name="bell" size={20} color="#000" />
       </View>
 
       {/* Tabs */}
-      <View style={styles.tabContainer}>
+      <View style={styles.tab}>
         <TouchableOpacity onPress={() => setTab('Home')}>
-          <Text style={[styles.tabText, tab === 'Home' && styles.activeTab]}>Home</Text>
+          <Text style={[styles.tabText, tab === 'Home' && styles.activeTabText]}>Home</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => setTab('Category')}>
-          <Text style={[styles.tabText, tab === 'Category' && styles.activeTab]}>Category</Text>
+          <Text style={[styles.tabText, tab === 'Category' && styles.activeTabText]}>Category</Text>
         </TouchableOpacity>
       </View>
 
-      {/* Banner */}
-      <View style={styles.banner}>
-        <Text style={styles.bannerText}>24% off shipping today{"\n"}on bag purchases</Text>
-        <Text style={styles.bannerSubText}>By Kufuku Store</Text>
-      </View>
+      {/* Content */}
+      {tab === 'Home' ? (
+        <>
+          <View style={styles.banner}>
+            <View style={{ flex: 1 }}>
+              <Text style={styles.bannerTitle}>24% off shipping today{"\n"}on bag purchases</Text>
+              <Text style={styles.bannerBy}>By Kufuku Store</Text>
+            </View>
+            <Image source={{ uri: 'https://cdn.coolmate.me/images/march_all/05.jpg' }} style={styles.bannerImage} />
+          </View>
 
-      {/* Section Title */}
-      <View style={styles.sectionHeader}>
-        <Text style={styles.sectionTitle}>New Arrivals 🔥</Text>
-        <TouchableOpacity>
-          <Text style={styles.seeAll}>See All</Text>
-        </TouchableOpacity>
-      </View>
-
-      {/* Product List */}
-      <FlatList
-        data={products}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={(item) => item.id}
-        contentContainerStyle={{ paddingHorizontal: 16 }}
-        renderItem={({ item }) => (
-          <View style={styles.productCard}>
-            <Image source={{ uri: item.image }} style={styles.productImage} />
-            <Text style={styles.productName}>{item.name}</Text>
-            <Text style={styles.productBrand}>{item.brand}</Text>
-            <Text style={styles.productPrice}>{item.price}</Text>
-            <TouchableOpacity style={styles.heartIcon}>
-              <Icon name="heart" size={16} color="#999" />
+          <View style={styles.sectionHeader}>
+            <Text style={styles.sectionTitle}>New Arrivals 🔥</Text>
+            <TouchableOpacity onPress={() => navigation.navigate('ProductList')}>
+              <Text style={styles.seeAll}>See All</Text>
             </TouchableOpacity>
           </View>
-        )}
-      />
+
+          {loading ? (
+            <ActivityIndicator size="large" color="#333" style={{ marginTop: 20 }} />
+          ) : (
+            <FlatList
+              data={products}
+              numColumns={2}
+              keyExtractor={(item) => item.id.toString()}
+              contentContainerStyle={{ paddingHorizontal: 16 }}
+              columnWrapperStyle={{ justifyContent: 'space-between' }}
+              renderItem={renderProduct}
+            />
+          )}
+        </>
+      ) : (
+        <View style={{ paddingHorizontal: 16 }}>
+          {categoryList.map((cat) => (
+            <TouchableOpacity key={cat.id} style={styles.categoryCard}>
+              <Image source={{ uri: cat.image }} style={styles.categoryImage} />
+              <View style={styles.categoryOverlay}>
+                <Text style={styles.categoryTitle}>{cat.name}</Text>
+                <Text style={styles.categoryCount}>{cat.count} Product</Text>
+              </View>
+            </TouchableOpacity>
+          ))}
+        </View>
+      )}
     </View>
   );
 };
+
 export default HomeScreen;

@@ -3,16 +3,15 @@ import { TouchableOpacity, Text, Image, Alert } from 'react-native';
 import {
   GoogleSignin,
   statusCodes,
-  User as GoogleUser,
 } from '@react-native-google-signin/google-signin';
 import { insertUser, getUserByEmailAndPassword } from '../src/database';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useFocusEffect } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../App';
 import styles from '../Style/StyleRegister';
 
 GoogleSignin.configure({
-  webClientId: '965327573821-80jiqs02mhu5oov03moqgsosebsra268.apps.googleusercontent.com', 
+  webClientId: '965327573821-4hrdbgguvo2m0i0b7ii8hdl6580o6eld.apps.googleusercontent.com',
   offlineAccess: false,
 });
 
@@ -24,20 +23,33 @@ const GoogleLoginButton = () => {
       await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
 
       const userInfo = await GoogleSignin.signIn();
+      console.log('Google userInfo:', userInfo);
 
       const email = userInfo.user.email;
       const name = userInfo.user.name ?? 'GoogleUser';
 
       const existingUser = await getUserByEmailAndPassword(email, 'google');
+      console.log('Existing user:', existingUser);
 
       if (!existingUser) {
-        await insertUser(email, 'google', 'user');
+        try {
+          await insertUser(email, 'google', 'user');
+          console.log('New user inserted');
+        } catch (insertError) {
+          console.log('Insert user failed:', insertError);
+        }
       }
 
       Alert.alert('Success', `Welcome, ${name}!`);
-      navigation.replace('MainTab');
+
+      setTimeout(() => {
+        console.log('Navigating to MainTab...');
+        navigation.replace('MainTab');
+      }, 100);
+
     } catch (error: any) {
-      console.log('Google login error:', error);
+      console.log('Google login error:', JSON.stringify(error, null, 2));
+
 
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         Alert.alert('Cancelled', 'Google Sign-In was cancelled');
@@ -46,7 +58,7 @@ const GoogleLoginButton = () => {
       } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
         Alert.alert('Play Services Error', 'Google Play Services not available');
       } else {
-        Alert.alert('Error', 'Google Sign-In failed.');
+        Alert.alert('Error', 'Google Sign-In failed');
       }
     }
   };

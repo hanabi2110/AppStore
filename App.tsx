@@ -7,6 +7,10 @@ import RegisterScreen from './screens/RegisterScreen';
 import UserScreen from './screens/UserScreen';
 import BottomTabNavigator from './src/BottomTabNavigator';
 import { initUserTable,insertUser} from './src/database';
+import ProductListScreen from './screens/ProductListScreen';
+
+
+
 export type RootStackParamList = {
   Onboarding: undefined;
   Login: undefined;
@@ -14,6 +18,7 @@ export type RootStackParamList = {
   AdminProduct: undefined;
   UserScreen: undefined;
   MainTab: undefined;
+  ProductList: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -46,6 +51,7 @@ export default function App() {
         <Stack.Screen name="Register" component={RegisterScreen} />
         <Stack.Screen name="UserScreen" component={UserScreen} />
         <Stack.Screen name="MainTab" component={BottomTabNavigator} />
+        <Stack.Screen name="ProductList" component={ProductListScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
