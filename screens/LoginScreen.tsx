@@ -12,6 +12,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../App';
 import styles from '../Style/StyleLogin';
 import { getUserByEmailAndPassword } from '../src/database';
+import GoogleLoginButton from './GoogleLoginButton';
 
 const LoginScreen = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
@@ -79,10 +80,7 @@ const LoginScreen = () => {
 
       <Text style={styles.orText}>Or sign in with</Text>
 
-      <TouchableOpacity style={styles.socialButton}>
-        <Image source={{ uri: 'https://img.icons8.com/color/48/google-logo.png' }} style={styles.icon} />
-        <Text style={styles.socialText}>Sign In with Google</Text>
-      </TouchableOpacity>
+      <GoogleLoginButton />
 
       <TouchableOpacity style={styles.socialButton}>
         <Image source={{ uri: 'https://img.icons8.com/color/48/facebook-new.png' }} style={styles.icon} />
