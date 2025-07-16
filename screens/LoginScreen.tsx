@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
 import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  Image,
-  Alert,
+  View, Text, TextInput, TouchableOpacity, Image, Alert,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -13,11 +8,13 @@ import { RootStackParamList } from '../App';
 import styles from '../Style/StyleLogin';
 import { getUserByEmailAndPassword } from '../src/database';
 import GoogleLoginButton from './GoogleLoginButton';
+import Icon from 'react-native-vector-icons/Feather'; 
 
 const LoginScreen = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const [emailOrPhone, setEmailOrPhone] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false); 
 
   const handleLogin = async () => {
     if (!emailOrPhone.trim() || !password.trim()) {
@@ -63,11 +60,19 @@ const LoginScreen = () => {
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Enter your password"
-          secureTextEntry
+          secureTextEntry={!showPassword}
           style={styles.input}
           value={password}
           onChangeText={setPassword}
         />
+        <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+          <Icon
+            name={showPassword ? 'eye-off' : 'eye'}
+            size={20}
+            color="#999"
+            style={styles.eyeIcon}
+          />
+        </TouchableOpacity>
       </View>
 
       <TouchableOpacity style={styles.forgotContainer}>
@@ -83,7 +88,10 @@ const LoginScreen = () => {
       <GoogleLoginButton />
 
       <TouchableOpacity style={styles.socialButton}>
-        <Image source={{ uri: 'https://img.icons8.com/color/48/facebook-new.png' }} style={styles.icon} />
+        <Image
+          source={{ uri: 'https://img.icons8.com/color/48/facebook-new.png' }}
+          style={styles.icon}
+        />
         <Text style={styles.socialText}>Sign In with Facebook</Text>
       </TouchableOpacity>
 

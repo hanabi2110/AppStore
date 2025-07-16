@@ -1,8 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, Image, Alert } from 'react-native';
-import {
-  GoogleSignin,
-  statusCodes,
+import { GoogleSignin, statusCodes,
 } from '@react-native-google-signin/google-signin';
 import { insertUser, getUserByEmailAndPassword } from '../src/database';
 import { useNavigation, useFocusEffect } from '@react-navigation/native';
