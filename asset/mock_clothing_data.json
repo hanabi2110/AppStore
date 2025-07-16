@@ -1,0 +1,642 @@
+[
+  {
+    "id": 1,
+    "name": "Sandals",
+    "brand": "Adidas",
+    "category": "Shoes",
+    "price": 73.47,
+    "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d249ab99fecb4a8c9362ad6600baa4e5_9366/Sandal_adilette_DJen_GW0344_01_standard.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Blazer",
+    "brand": "Nike",
+    "category": "Women Clothing",
+    "price": 41.55,
+    "image": "https://sneakerholicvietnam.vn/wp-content/uploads/2021/07/nike-blazer-mid-vintage-white-black-BQ6806-100.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Blazer",
+    "brand": "H&M",
+    "category": "Women Clothing",
+    "price": 95.88,
+    "image": "https://image.hm.com/assets/hm/53/0a/530a82614cc168dbb4dec44e457eefe87ed29910.jpg?imwidth=2160"
+  },
+  {
+    "id": 4,
+    "name": "Bodycon Dress",
+    "brand": "Uniqlo",
+    "category": "Dress",
+    "price": 180.24,
+    "image": "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/474064/sub/goods_474064_sub15_3x4.jpg?width=600"
+  },
+  {
+    "id": 5,
+    "name": "Jacket",
+    "brand": "Zara",
+    "category": "Men Clothing",
+    "price": 98.37,
+    "image": "https://mssstore.vn/storage/san-pham/zara/2023-autumn-and-winter-y2k-loosexzcxc.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Blouse",
+    "brand": "Nike",
+    "category": "Women Clothing",
+    "price": 101.07,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkVmmWTEFZxPWXdvJ3F7zjvqgyux-KCWR4Ew&s"
+  },
+  {
+    "id": 7,
+    "name": "Bag",
+    "brand": "Zara",
+    "category": "Accessories",
+    "price": 101.7,
+    "image": "https://static.zara.net/assets/public/2a73/9b1b/be66417c982d/7f9b996066c2/11100530800-e1/11100530800-e1.jpg?ts=1738253190419&w=744&f=auto"
+  },
+  {
+    "id": 8,
+    "name": "Sneakers",
+    "brand": "Gucci",
+    "category": "Shoes",
+    "price": 16.52,
+    "image": "https://eteft.com/cdn/shop/products/gcbee_b1ef712f-a849-4960-a3c5-5493c3507525.png?v=1664792111"
+  },
+  {
+    "id": 9,
+    "name": "Sandals",
+    "brand": "Uniqlo",
+    "category": "Shoes",
+    "price": 156.05,
+    "image": "https://vn-test-11.slatic.net/p/ec604cb7026a2ff3247160e71379d021.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Jacket",
+    "brand": "Zara",
+    "category": "Men Clothing",
+    "price": 55.39,
+    "image": "https://static.zara.net/assets/public/f535/0922/beff4ef7a854/d5b1771770bb/05854559800-e1/05854559800-e1.jpg?ts=1724225266916"
+  },
+  {
+    "id": 11,
+    "name": "Sunglasses",
+    "brand": "H&M",
+    "category": "Accessories",
+    "price": 156.17,
+    "image": "https://image.hm.com/assets/hm/87/c0/87c0db42b2fb0ab6360f18c9b88086b4055ed618.jpg?imwidth=768"
+  },
+  {
+    "id": 12,
+    "name": "Shirt",
+    "brand": "H&M",
+    "category": "Men Clothing",
+    "price": 121.29,
+    "image": "https://image.hm.com/assets/hm/4f/e1/4fe163b84c812659fe47b5177d8bca8551be4c39.jpg?imwidth=2160"
+  },
+  {
+    "id": 13,
+    "name": "Hat",
+    "brand": "Adidas",
+    "category": "Accessories",
+    "price": 196.62,
+    "image": "https://bizweb.dktcdn.net/100/407/286/products/superlite-hat-white-ex7049-01-standard.jpg?v=1714107192017"
+  },
+  {
+    "id": 14,
+    "name": "Blazer",
+    "brand": "Uniqlo",
+    "category": "Women Clothing",
+    "price": 94.08,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXz9Q98YSfMV7Xl-5qAMzMoaK4UcZ20B0CKQ&s"
+  },
+  {
+    "id": 15,
+    "name": "Loafers",
+    "brand": "Adidas",
+    "category": "Shoes",
+    "price": 27.76,
+    "image": "https://i.ebayimg.com/images/g/Y~kAAOSwpO5jjRCF/s-l1200.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Cocktail Dress",
+    "brand": "H&M",
+    "category": "Dress",
+    "price": 107.51,
+    "image": "https://image.hm.com/assets/hm/a7/0d/a70dee353765419145a52a069ae80d7f0bb03253.jpg?imwidth=2160"
+  },
+  {
+    "id": 17,
+    "name": "Jeans",
+    "brand": "Gucci",
+    "category": "Men Clothing",
+    "price": 78.73,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6dXabNA-q6SziqHRjkVKmhfAt2i2_i5LtUA&s"
+  },
+  {
+    "id": 18,
+    "name": "Sneakers",
+    "brand": "Uniqlo",
+    "category": "Shoes",
+    "price": 108.08,
+    "image": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/434989/item/goods_09_434989_3x4.jpg?width=494"
+  },
+  {
+    "id": 19,
+    "name": "Loafers",
+    "brand": "H&M",
+    "category": "Shoes",
+    "price": 106.5,
+    "image": "https://image.hm.com/assets/hm/68/fa/68fa54cfd1a96bc68f697cd9316b99ebea63bc6f.jpg?imwidth=768"
+  },
+  {
+    "id": 20,
+    "name": "Tank Top",
+    "brand": "Adidas",
+    "category": "Women Clothing",
+    "price": 11.06,
+    "image": "https://ash.vn/cdn/shop/files/68fac90843307820d285f3c6df882efc_1800x.jpg?v=1733201125"
+  },
+  {
+    "id": 21,
+    "name": "Cocktail Dress",
+    "brand": "Nike",
+    "category": "Dress",
+    "price": 64.91,
+    "image": "https://ash.vn/cdn/shop/files/68fac90843307820d285f3c6df882efc_1800x.jpg?v=1733201125"
+  },
+  {
+    "id": 22,
+    "name": "Superstar",
+    "brand": "Adidas",
+    "category": "Shoes",
+    "price": 99.51,
+    "image": "https://kallos.co/cdn/shop/products/Black_EG4959_01_standard.jpg?v=1674061906&width=1080"
+  },
+  {
+    "id": 23,
+    "name": "Tank Top",
+    "brand": "Zara",
+    "category": "Women Clothing",
+    "price": 192.93,
+    "image": "https://static.zara.net/assets/public/c754/95d8/a585419aa825/24dcc9c3cb75/05048704800-e1/05048704800-e1.jpg?ts=1728980750540"
+  },
+  {
+    "id": 24,
+    "name": "Blouse",
+    "brand": "Adidas",
+    "category": "Women Clothing",
+    "price": 119.55,
+    "image": "https://cdn.aboutstatic.com/file/images/65c31928fc1328c9a83cea4de09b4b11.png?bg=F4F4F5&quality=75&trim=1&height=480&width=360"
+  },
+  {
+    "id": 25,
+    "name": "Blazer",
+    "brand": "Gucci",
+    "category": "Women Clothing",
+    "price": 19.47,
+    "image": "https://cdn-images.farfetch-contents.com/23/87/00/40/23870040_53938943_1000.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Hoodie",
+    "brand": "Uniqlo",
+    "category": "Men Clothing",
+    "price": 13.95,
+    "image": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/450189/item/goods_09_450189_3x4.jpg?width=494"
+  },
+  {
+    "id": 27,
+    "name": "Loafers",
+    "brand": "H&M",
+    "category": "Shoes",
+    "price": 104.46,
+    "image": "https://image.hm.com/assets/hm/68/fa/68fa54cfd1a96bc68f697cd9316b99ebea63bc6f.jpg?imwidth=768"
+  },
+  {
+    "id": 28,
+    "name": "Sunglasses",
+    "brand": "Uniqlo",
+    "category": "Accessories",
+    "price": 188.42,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuZ3LwJ6rRpbyxzzQAfRJtjGDd5rJM-Yts0A&s"
+  },
+  {
+    "id": 29,
+    "name": "Summer Dress",
+    "brand": "Adidas",
+    "category": "Dress",
+    "price": 24.47,
+    "image": "https://sneakerdaily.vn/wp-content/uploads/2024/07/Vay-adidas-Summer-Holiday-Graphic-Play-Knit-Dress-Off-White-IW6304.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Hoodie",
+    "brand": "Gucci",
+    "category": "Men Clothing",
+    "price": 32.38,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAdZ4RzdENrlQJR7AOIyGZw50lgDIWYSjaIA&s"
+  },
+  {
+    "id": 31,
+    "name": "Loafers",
+    "brand": "Nike",
+    "category": "Shoes",
+    "price": 140.53,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLL1WgZ_H6A3q4TKCfdjhQIu3L4kzpfe3sgQ&s"
+  },
+  {
+    "id": 32,
+    "name": "Bag",
+    "brand": "Adidas",
+    "category": "Accessories",
+    "price": 140.96,
+    "image": "https://assets.adidas.com/images/w_600,f_auto,q_auto/abe3a78ccfe34bacb6d0ad5600ee3f3a_9366/Ba_Lo_Adicolor_DJen_H35596_01_standard.jpg"
+  },
+  {
+    "id": 33,
+    "name": "Hat",
+    "brand": "Gucci",
+    "category": "Accessories",
+    "price": 57.09,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbMhemZeTly_E5iyFPQfwZUddGUqr35zLnjQ&s"
+  },
+  {
+    "id": 34,
+    "name": "Jumpsuit",
+    "brand": "Zara",
+    "category": "Women Clothing",
+    "price": 117.47,
+    "image": "https://static.zara.net/assets/public/ad20/8dec/5a5848028174/8aa8ae33c2a6/01172115052-e1/01172115052-e1.jpg?ts=1742216124706"
+  },
+  {
+    "id": 35,
+    "name": "Hoodie",
+    "brand": "Zara",
+    "category": "Men Clothing",
+    "price": 139.18,
+    "image": "https://static.zara.net/assets/public/138a/36d6/361142938313/e673bf052324/03854675446-e1/03854675446-e1.jpg?ts=1738260006307"
+  },
+  {
+    "id": 36,
+    "name": "Cocktail Dress",
+    "brand": "Uniqlo",
+    "category": "Dress",
+    "price": 51.99,
+    "image": "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/474056/sub/goods_474056_sub14_3x4.jpg?width=600"
+  },
+  {
+    "id": 37,
+    "name": "Blouse",
+    "brand": "H&M",
+    "category": "Women Clothing",
+    "price": 186.35,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOpu9Zp6oV5SggL6M2ewmVKKCSLH3ZI8ffvw&s"
+  },
+  {
+    "id": 38,
+    "name": "Blazer",
+    "brand": "Uniqlo",
+    "category": "Women Clothing",
+    "price": 133.57,
+    "image": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/467188/sub/goods_467188_sub14_3x4.jpg?width=494"
+  },
+  {
+    "id": 39,
+    "name": "Heels",
+    "brand": "Gucci",
+    "category": "Shoes",
+    "price": 186.72,
+    "image": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2024/07/giay-cao-got-nu-gucci-multicolor-lovelight-slingback-heels-phoi-mau-size-37-5-6683a42d3eef8-02072024135437.jpg"
+  },
+  {
+    "id": 40,
+    "name": "Jeans",
+    "brand": "Zara",
+    "category": "Men Clothing",
+    "price": 59.3,
+    "image": "https://static.zara.net/assets/public/3868/2717/593548f29382/851e325c3b9d/05252706802-e2/05252706802-e2.jpg?ts=1738752785133"
+  },
+  {
+    "id": 41,
+    "name": "Loafers S",
+    "brand": "Nike",
+    "category": "Shoes",
+    "price": 42.91,
+    "image": "https://media.gq.com/photos/685c3dac3b5f37ce4585a897/master/w_1600%2Cc_limit/nike-air-max-phenomena-loafer-pearl-pink-black-cool-grey-hj4400-601-8.png"
+  },
+  {
+    "id": 42,
+    "name": "Mid Heels",
+    "brand": "Gucci",
+    "category": "Shoes",
+    "price": 94.76,
+    "image": "https://product.hstatic.net/200000525917/product/453379_a3n00_1000_001_080_0000_l_25574cbc0ac84e608a99c1835dc1be5e_610f5c78d3944a688760f43859a7f03d_master.png"
+  },
+  {
+    "id": 43,
+    "name": "Boots",
+    "brand": "H&M",
+    "category": "Shoes",
+    "price": 122.0,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ24lx7Vsnr8SSL_gTECv6LAVPW15QZsTN6Qw&s"
+  },
+  {
+    "id": 44,
+    "name": "Boots",
+    "brand": "Chanel",
+    "category": "Shoes",
+    "price": 194.75,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRZ3PsE2-s7uy6OQgOWbQ68QJxIkB4N1IFMg&s"
+  },
+  {
+    "id": 45,
+    "name": "Shirt",
+    "brand": "H&M",
+    "category": "Men Clothing",
+    "price": 55.35,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjdpR0PCHje3Ufn0alRfqsXNsqFfuJEP6URw&s"
+  },
+  {
+    "id": 46,
+    "name": "Boots",
+    "brand": "Nike",
+    "category": "Shoes",
+    "price": 143.84,
+    "image": "https://cdn-images.farfetch-contents.com/19/61/42/58/19614258_43743592_1000.jpg"
+  },
+  {
+    "id": 47,
+    "name": "Skirt",
+    "brand": "Uniqlo",
+    "category": "Women Clothing",
+    "price": 31.14,
+    "image": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/422992/sub/goods_422992_sub14_3x4.jpg?width=494"
+  },
+  {
+    "id": 48,
+    "name": "Cocktail Dress",
+    "brand": "Gucci",
+    "category": "Dress",
+    "price": 59.67,
+    "image": "https://source.unsplash.com/random/300x300?sig=48&cocktail-dress"
+  },
+  {
+    "id": 49,
+    "name": "Hoodie",
+    "brand": "Gucci",
+    "category": "Men Clothing",
+    "price": 164.5,
+    "image": "https://a.1stdibscdn.com/gucci-by-tom-ford-burgundy-silk-spaghetti-strap-cocktail-dress-for-sale/1121189/v_123312621621619079233/12331262_master.jpg"
+  },
+  {
+    "id": 50,
+    "name": "Jeans",
+    "brand": "Zara",
+    "category": "Men Clothing",
+    "price": 199.35,
+    "image": "https://source.unsplash.com/random/300x300?sig=50&jeans"
+  },
+  {
+    "id": 51,
+    "name": "Sneakers",
+    "brand": "Nike",
+    "category": "Shoes",
+    "price": 61.2,
+    "image": "https://supersports.com.vn/cdn/shop/files/DH2987-113-1.jpg?v=1731317156"
+  },
+  {
+    "id": 52,
+    "name": "Jacket",
+    "brand": "Uniqlo",
+    "category": "Men Clothing",
+    "price": 124.3,
+    "image": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/466464/sub/goods_466464_sub14_3x4.jpg?width=494"
+  },
+  {
+    "id": 53,
+    "name": "Bag",
+    "brand": "Adidas",
+    "category": "Accessories",
+    "price": 163.07,
+    "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c6f51a56dec34a469cb11e7023c19594_9366/Adicolor_Classic_Round_Bag_Black_IT7592_01_00_standard.jpg"
+  },
+  {
+    "id": 54,
+    "name": "Tank Top",
+    "brand": "Adidas",
+    "category": "Women Clothing",
+    "price": 187.21,
+    "image": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2024/08/ao-ba-lo-nu-adidas-tank-top-essentials-ij8257-mau-trang-size-s-66bc080fac3cd-14082024082743.jpg"
+  },
+  {
+    "id": 55,
+    "name": "Jumpsuit",
+    "brand": "Nike",
+    "category": "Women Clothing",
+    "price": 23.82,
+    "image": "https://cdn-images.farfetch-contents.com/24/38/73/35/24387335_54558095_600.jpg"
+  },
+  {
+    "id": 56,
+    "name": "Sunglasses",
+    "brand": "Chanel",
+    "category": "Accessories",
+    "price": 195.33,
+    "image": "https://cdn.vuahanghieu.com/unsafe/0x900/left/top/smart/filters:quality(90)/https://admin.vuahanghieu.com/upload/product/2024/05/kinh-mat-chanel-rectangle-sunglasses-ch5514-c622s6-mau-den-66595046efd35-31052024112126.jpg"
+  },
+  {
+    "id": 57,
+    "name": "Loafers",
+    "brand": "Zara",
+    "category": "Shoes",
+    "price": 151.49,
+    "image": "https://static.zara.net/assets/public/dbc7/2292/f30145fcbe4d/9b88c776e6b7/12592430102-e1/12592430102-e1.jpg?ts=1738252923134&w=744&f=auto"
+  },
+  {
+    "id": 58,
+    "name": "Summer Dress",
+    "brand": "Gucci",
+    "category": "Dress",
+    "price": 88.02,
+    "image": "https://i.pinimg.com/474x/1d/1b/b9/1d1bb92f26db26705a85f19a084940db.jpg"
+  },
+  {
+    "id": 59,
+    "name": "Tank Top",
+    "brand": "Zara",
+    "category": "Women Clothing",
+    "price": 124.43,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ6rUi6qY3xgS9grtX714qydxqUH_2s-sxwA&s"
+  },
+  {
+    "id": 60,
+    "name": "Watch",
+    "brand": "Adidas",
+    "category": "Accessories",
+    "price": 103.71,
+    "image": "https://product.hstatic.net/1000366086/product/1_82ee6be645a648e49975bac6ec47fccd.png"
+  },
+  {
+    "id": 61,
+    "name": "Shirt",
+    "brand": "Zara",
+    "category": "Men Clothing",
+    "price": 64.1,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt44RBKFOwu5r_eyygJ-57Wz6k4E8OhWfG8g&s"
+  },
+  {
+    "id": 62,
+    "name": "Boots",
+    "brand": "Gucci",
+    "category": "Shoes",
+    "price": 89.16,
+    "image": "https://cdn-images.farfetch-contents.com/17/34/94/53/17349453_53138971_1000.jpg"
+  },
+  {
+    "id": 63,
+    "name": "Hoodie",
+    "brand": "Adidas",
+    "category": "Men Clothing",
+    "price": 119.15,
+    "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4035ef3c45b744a7aff4ac630138e8cb_9366/Ao_Hoodie_Ni_Khoa_Keo_3_Soc_Essentials_DJen_GK9051_01_laydown.jpg"
+  },
+  {
+    "id": 64,
+    "name": "Tank Top",
+    "brand": "H&M",
+    "category": "Women Clothing",
+    "price": 85.26,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5UmYr9iB4V1y0f8mCWWRGlff6c7gdIPbB-g&s"
+  },
+  {
+    "id": 65,
+    "name": "Shirt",
+    "brand": "Uniqlo",
+    "category": "Men Clothing",
+    "price": 158.55,
+    "image": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/459311/item/goods_01_459311_3x4.jpg?width=494"
+  },
+  {
+    "id": 66,
+    "name": "Sneakers",
+    "brand": "Uniqlo",
+    "category": "Shoes",
+    "price": 179.74,
+    "image": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/434989/item/goods_09_434989_3x4.jpg?width=494"
+  },
+  {
+    "id": 67,
+    "name": "Tank Top",
+    "brand": "Nike",
+    "category": "Women Clothing",
+    "price": 45.69,
+    "image": "https://editorialist.com/thumbnail/600/2023/5/024/352/828/24352828~white_0.webp?width=600&quality=60"
+  },
+  {
+    "id": 68,
+    "name": "Hoodie",
+    "brand": "Gucci",
+    "category": "Men Clothing",
+    "price": 134.14,
+    "image": "https://cdn-images.farfetch-contents.com/12/56/27/14/12562714_53182301_1000.jpg"
+  },
+  {
+    "id": 69,
+    "name": "Blazer",
+    "brand": "Gucci",
+    "category": "Women Clothing",
+    "price": 197.33,
+    "image": "https://hotgirlshop.vn/uploads/picture/31082024/News/208312200-ao-khoac-vest-gucci-chinh-hang.jpg"
+  },
+  {
+    "id": 70,
+    "name": "Sneakers",
+    "brand": "Uniqlo",
+    "category": "Shoes",
+    "price": 15.54,
+    "image": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/434989/item/goods_09_434989_3x4.jpg?width=494"
+  },
+  {
+    "id": 71,
+    "name": "Hat",
+    "brand": "Chanel",
+    "category": "Accessories",
+    "price": 197.44,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXYgyWzF-2NsK3IpXVHolUpXuJ1iZKvBG5MQ&s"
+  },
+  {
+    "id": 72,
+    "name": "Blouse",
+    "brand": "Chanel",
+    "category": "Women Clothing",
+    "price": 121.0,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKiOFWaHI-z7bM_a9gJDxqnAY2AuWkzIvaqQ&s"
+  },
+  {
+    "id": 73,
+    "name": "Boots",
+    "brand": "Adidas",
+    "category": "Shoes",
+    "price": 159.02,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyBxat_K6Nh7LX1R4sIlVn-taR6PI7Wea-OQ&s"
+  },
+  {
+    "id": 74,
+    "name": "Heels",
+    "brand": "H&M",
+    "category": "Shoes",
+    "price": 181.52,
+    "image": "https://image.hm.com/assets/hm/9f/c9/9fc9872df88efff1b1a95c7f32b29b4910f7ba5f.jpg?imwidth=2160"
+  },
+  {
+    "id": 75,
+    "name": "Jumpsuit",
+    "brand": "Adidas",
+    "category": "Women Clothing",
+    "price": 189.29,
+    "image": "https://img01.ztat.net/article/spp-media-p1/0e37dec9fe014841a4e29301e6653039/4369b41da3d0491daf8e0026fc15c748.jpg?imwidth=1800&filter=packshot"
+  },
+  {
+    "id": 76,
+    "name": "Cocktail Dress",
+    "brand": "Chanel",
+    "category": "Dress",
+    "price": 17.0,
+    "image": "https://source.unsplash.com/random/300x300?sig=76&cocktail-dress"
+  },
+  {
+    "id": 77,
+    "name": "Evening Dress",
+    "brand": "Chanel",
+    "category": "Dress",
+    "price": 85.39,
+    "image": "https://www.mytheresa.com/media/1094/1238/100/12/P00943812.jpg"
+  },
+  {
+    "id": 78,
+    "name": "Jacket",
+    "brand": "Zara",
+    "category": "Men Clothing",
+    "price": 59.44,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOisR9n--Ll0po6URzGmeC1esbvRGaSGJmTA&s"
+  },
+  {
+    "id": 79,
+    "name": "Summer Dress",
+    "brand": "Uniqlo",
+    "category": "Dress",
+    "price": 84.25,
+    "image": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/470805/item/goods_65_470805_3x4.jpg?width=494"
+  },
+  {
+    "id": 80,
+    "name": "Evening Dress",
+    "brand": "H&M",
+    "category": "Dress",
+    "price": 28.02,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdmlLTXm8OvJqCNPEcjfhltZX40GARqFmZlA&s"
+  }
+]

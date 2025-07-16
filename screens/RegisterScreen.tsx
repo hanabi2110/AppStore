@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  Image,
-  Alert,
+  View, Text, TextInput, TouchableOpacity, Image, Alert,
 } from 'react-native';
 import styles from '../Style/StyleRegister';
 import { insertUser } from '../src/database';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../App';
-import GoogleLoginButton from './GoogleLoginButton'; 
+import GoogleLoginButton from './GoogleLoginButton';
+import Icon from 'react-native-vector-icons/Feather';
 
 const RegisterScreen = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
@@ -20,10 +16,18 @@ const RegisterScreen = () => {
   const [username, setUsername] = useState('');
   const [emailOrPhone, setEmailOrPhone] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleCreateAccount = async () => {
-    if (!username || !emailOrPhone || !password) {
+    if (!username || !emailOrPhone || !password || !confirmPassword) {
       Alert.alert('Warning', 'Please fill in all fields.');
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      Alert.alert('Warning', 'Passwords do not match.');
       return;
     }
 
@@ -67,11 +71,28 @@ const RegisterScreen = () => {
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Create your password"
-          secureTextEntry
+          secureTextEntry={!showPassword}
           style={styles.input}
           value={password}
           onChangeText={setPassword}
         />
+        <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+          <Icon name={showPassword ? 'eye-off' : 'eye'} size={20} color="#888" />
+        </TouchableOpacity>
+      </View>
+
+      <Text style={styles.label}>Confirm Password</Text>
+      <View style={styles.inputContainer}>
+        <TextInput
+          placeholder="Re-enter your password"
+          secureTextEntry={!showConfirmPassword}
+          style={styles.input}
+          value={confirmPassword}
+          onChangeText={setConfirmPassword}
+        />
+        <TouchableOpacity onPress={() => setShowConfirmPassword(!showConfirmPassword)}>
+          <Icon name={showConfirmPassword ? 'eye-off' : 'eye'} size={20} color="#888" />
+        </TouchableOpacity>
       </View>
 
       <TouchableOpacity style={styles.createButton} onPress={handleCreateAccount}>
@@ -80,7 +101,6 @@ const RegisterScreen = () => {
 
       <Text style={styles.orText}>Or using other method</Text>
 
-      {/* ✅ Google login button */}
       <GoogleLoginButton />
 
       <TouchableOpacity style={styles.socialButton}>

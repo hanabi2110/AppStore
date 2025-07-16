@@ -14,6 +14,11 @@ const StyleRegister = StyleSheet.create({
     paddingHorizontal: 12,
     backgroundColor: '#f9f9f9',
   },
+   toggleText: {
+  color: '#007BFF',
+  paddingHorizontal: 10,
+  alignSelf: 'center',
+},  
   input: { flex: 1, padding: 12 },
   createButton: {
     backgroundColor: '#5C4DB1',

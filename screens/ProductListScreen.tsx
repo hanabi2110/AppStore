@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, Image, ActivityIndicator, StyleSheet } from 'react-native';
+import { View, Text, FlatList, Image, ActivityIndicator} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import styles from '../Style/StyleProductList'
 interface Product {

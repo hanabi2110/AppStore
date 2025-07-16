@@ -1,10 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  FlatList,
+import { View, Text, Image, TouchableOpacity, FlatList,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
@@ -22,8 +17,8 @@ const slides = [
   {
     id: '2',
     image: 'https://pos.nvncdn.com/86c7ad-50310/art/20210130_SLxq9tElmYA0Qz9zp61gcl62.jpg',
-    title: 'Trendy Styles For Everyone',
-    subtitle: 'Nulla facilisi, feugiat in fermentum id, volutpat in arcu.',
+    title: 'Complete Collection Of Colors And Sizes',
+    subtitle: 'Urna amet, suspendisse ullamcorper ac elit diam facilisis cursus vestibulum.',
   },
 ];
 
@@ -67,8 +62,6 @@ const OnboardingScreen: React.FC = () => {
           </View>
         )}
       />
-
-      {/* Dot Indicator */}
       <View style={styles.pagination}>
         {slides.map((_, index) => (
           <View
@@ -78,7 +71,7 @@ const OnboardingScreen: React.FC = () => {
         ))}
       </View>
 
-      {/* Create Account Button */}
+ 
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('Register')}
@@ -86,7 +79,7 @@ const OnboardingScreen: React.FC = () => {
         <Text style={styles.buttonText}>Create Account</Text>
       </TouchableOpacity>
 
-      {/* Already Have Account */}
+     
        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
         <Text style={styles.footerText}>Already Have an Account</Text>
       </TouchableOpacity>
