@@ -6,8 +6,9 @@ import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import UserScreen from './screens/UserScreen';
 import BottomTabNavigator from './src/BottomTabNavigator';
-import { initUserTable,insertUser} from './src/database';
+import { initProductTable, initUserTable,insertUser} from './src/database';
 import ProductListScreen from './screens/ProductListScreen';
+import AdminProductScreen from './screens/AdminProductScreen';
 
 
 
@@ -27,7 +28,7 @@ export default function App() {
   useEffect(() => {
     const setup = async () => {
       await initUserTable();
-
+      await initProductTable();
       try {
         await insertUser('admin@gmail.com', '1', 'admin');
       } catch (e) {
@@ -52,6 +53,7 @@ export default function App() {
         <Stack.Screen name="UserScreen" component={UserScreen} />
         <Stack.Screen name="MainTab" component={BottomTabNavigator} />
         <Stack.Screen name="ProductList" component={ProductListScreen} />
+        <Stack.Screen name="AdminProduct" component={AdminProductScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
