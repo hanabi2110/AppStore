@@ -79,6 +79,7 @@ export const initProductTable = async () => {
           id INTEGER PRIMARY KEY AUTOINCREMENT,
           name TEXT,
           brand TEXT,
+          category TEXT,
           price REAL,
           image TEXT
         );`,
@@ -119,13 +120,13 @@ export const getAllProducts = async (): Promise<any[]> => {
 };
 
 
-export const insertProduct = async (name: string, brand: string, price: number, image: string) => {
+export const insertProduct = async (name: string, brand: string, price: number, image: string, category:string) => {
   const database = await db;
   return new Promise((resolve, reject) => {
     database.transaction(tx => {
       tx.executeSql(
-        'INSERT INTO products (name, brand, price, image) VALUES (?, ?, ?, ?);',
-        [name, brand, price, image],
+        'INSERT INTO products (name, brand, price, image,category) VALUES (?, ?, ?, ?, ?);',
+        [name, brand, price, image,category],
         (_, result) => resolve(result),
         (_, error) => {
           console.log('Insert product error:', error);
@@ -137,13 +138,13 @@ export const insertProduct = async (name: string, brand: string, price: number, 
   });
 };
 
-export const updateProduct = async (id: number, name: string, brand: string, price: number, image: string) => {
+export const updateProduct = async (id: number, name: string, brand: string, price: number, image: string, category:string) => {
   const database = await db;
   return new Promise((resolve, reject) => {
     database.transaction(tx => {
       tx.executeSql(
-        'UPDATE products SET name = ?, brand = ?, price = ?, image = ? WHERE id = ?;',
-        [name, brand, price, image, id],
+        'UPDATE products SET name = ?, brand = ?, price = ?, image = ?, category = ? WHERE id = ?;',
+        [name, brand, price, image,category, id],
         (_, result) => resolve(result),
         (_, error) => {
           console.log('Update product error:', error);

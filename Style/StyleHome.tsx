@@ -1,174 +1,89 @@
+import { Platform, StatusBar } from "react-native";
 import { StyleSheet, Dimensions } from "react-native";
-const screenWidth = Dimensions.get('window').width;
 
 const StyleHome = StyleSheet.create({
-  container: {
+  container: { flex: 1, backgroundColor: '#fff' },
+  scrollContainer: { paddingHorizontal: 16, paddingBottom: 24 },
+  safeTopSpace: {
+    height: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+  },
+  headerTop: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 10,
+  },
+  headerTopRight: {
     flex: 1,
-    backgroundColor: '#FAFAFA',
-    paddingTop: 50,
+    marginLeft: 10,
   },
-
-  header: {
+  headerIcons: {
     flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 16,
-    marginBottom: 16,
+    gap: 12,
   },
-  avatar: {
-    width: 44,
-    height: 44,
-    borderRadius: 22,
+  iconBtn: {
+    marginLeft: 12,
   },
-  greeting: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#333',
+  greeting: { fontSize: 18, fontWeight: 'bold' },
+  subGreeting: { fontSize: 14, color: '#888' },
+  avatar: { width: 40, height: 40, borderRadius: 20 },
+  navTabs: {
+    flexDirection: 'row',
+    marginTop: 20,
+    marginBottom: 10,
   },
-  subGreeting: {
-    fontSize: 13,
-    color: '#888',
-  },
-
   tab: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginBottom: 16,
-    borderBottomWidth: 1,
-    borderColor: '#eee',
-  },
-  tabText: {
-    marginHorizontal: 20,
-    fontSize: 14,
-    paddingBottom: 8,
+    fontSize: 16,
+    marginRight: 20,
     color: '#999',
   },
-  activeTabText: {
-    color: '#000',
-    fontWeight: 'bold',
+  activeTab: {
+    color: '#5F2EEA',
     borderBottomWidth: 2,
-    borderColor: '#333',
+    borderColor: '#5F2EEA',
+    paddingBottom: 4,
   },
-
   banner: {
-    flexDirection: 'row',
-    backgroundColor: '#FFEFE8',
-    borderRadius: 16,
-    padding: 16,
-    marginHorizontal: 16,
-    alignItems: 'center',
-    marginBottom: 24,
+    backgroundColor: '#EEE6FD',
+    borderRadius: 12,
+    padding: 20,
+    marginBottom: 20,
   },
-  bannerTitle: {
+  bannerText: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#000',
+    color: '#222',
   },
-  bannerBy: {
-    fontSize: 12,
-    color: '#999',
-    marginTop: 6,
-  },
-  bannerImage: {
-    width: 80,
-    height: 80,
-    resizeMode: 'contain',
-  },
-
+  bannerSub: { fontSize: 13, color: '#555', marginTop: 4 },
   sectionHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    marginBottom: 12,
+    alignItems: 'center',
+    marginBottom: 10,
   },
-  sectionTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  seeAll: {
-    fontSize: 13,
-    color: '#888',
-  },
-
-  card: {
+  sectionTitle: { fontSize: 16, fontWeight: 'bold' },
+  seeAll: { fontSize: 13, color: '#5F2EEA' },
+  productList: { gap: 16 },
+  productCard: {
     width: '48%',
-    marginBottom: 20,
-    backgroundColor: '#fff',
-    borderRadius: 14,
+    backgroundColor: '#F8F8F8',
+    borderRadius: 12,
     padding: 10,
-    shadowColor: '#000',
-    shadowOpacity: 0.08,
-    shadowOffset: { width: 0, height: 4 },
-    shadowRadius: 8,
-    elevation: 3,
+    marginBottom: 16,
+    position: 'relative',
   },
-  productImage: {
-    width: '100%',
-    height: 120,
-    borderRadius: 10,
-    resizeMode: 'cover',
-  },
-  productTitle: {
-    marginTop: 8,
-    fontSize: 14,
-    fontWeight: '600',
-    color: '#333',
-  },
-  productBrand: {
-    fontSize: 12,
-    color: '#777',
-  },
-  productPrice: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    marginTop: 4,
-    color: '#E53935',
-  },
+  productImage: { width: '100%', height: 120, borderRadius: 8 },
+  productName: { fontSize: 14, fontWeight: 'bold', marginTop: 8 },
+  productBrand: { fontSize: 12, color: '#666' },
+  productPrice: { fontSize: 13, color: '#000', marginTop: 4 },
   heartIcon: {
     position: 'absolute',
-    top: 12,
-    right: 12,
-  },
-
-  categoryCard: {
-    height: 120,
-    borderRadius: 16,
-    overflow: 'hidden',
-    marginBottom: 16,
-  },
-  categoryImage: {
-    width: '100%',
-    height: '100%',
-    resizeMode: 'cover',
-  },
-  categoryOverlay: {
-    position: 'absolute',
-    top: 16,
-    left: 16,
-  },
-  categoryTitle: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#fff',
-  },
-  categoryCount: {
-    fontSize: 13,
-    color: '#fff',
-    marginTop: 4,
-  },
-
-  bottomTab: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    height: 60,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    borderTopWidth: 1,
-    borderColor: '#eee',
+    top: 10,
+    right: 10,
     backgroundColor: '#fff',
+    padding: 4,
+    borderRadius: 12,
   },
 });
 

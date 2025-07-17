@@ -17,7 +17,7 @@ const AdminProductScreen = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [editingProduct, setEditingProduct] = useState<any | null>(null);
   const [searchText, setSearchText] = useState('');
-  const [category, setCategory] = useState('All');
+  const [categorys, setCategorys] = useState('All');
 
   const navigation = useNavigation();
 
@@ -34,7 +34,7 @@ const AdminProductScreen = () => {
           importMockData();
         } else {
           setProducts(data);
-          filterData(searchText, category, data);
+          filterData(searchText, categorys, data);
         }
       })
       .catch(console.error);
@@ -43,7 +43,7 @@ const AdminProductScreen = () => {
   const importMockData = async () => {
     try {
       for (const item of mockData) {
-        await insertProduct(item.name, item.brand, item.price, item.image);
+        await insertProduct(item.name, item.brand, item.price, item.image, item.category);
       }
       loadData();
     } catch (err) {
@@ -66,11 +66,11 @@ const AdminProductScreen = () => {
 
   const handleSearch = (text: string) => {
     setSearchText(text);
-    filterData(text, category);
+    filterData(text, categorys);
   };
 
   const handleFilter = (cat: string) => {
-    setCategory(cat);
+    setCategorys(cat);
     filterData(searchText, cat);
   };
 
@@ -132,9 +132,9 @@ const AdminProductScreen = () => {
         {categoryList.map(cat => (
           <TouchableOpacity
             key={cat}
-            style={[styles.categoryBtn, category === cat && styles.activeCat]}
+            style={[styles.categoryBtn, categorys === cat && styles.activeCat]}
             onPress={() => handleFilter(cat)}>
-            <Text style={category === cat ? styles.activeCatText : styles.catText}>{cat}</Text>
+            <Text style={categorys === cat ? styles.activeCatText : styles.catText}>{cat}</Text>
           </TouchableOpacity>
         ))}
       </View>
@@ -160,9 +160,9 @@ const AdminProductScreen = () => {
         onClose={() => setModalVisible(false)}
         onSave={(data) => {
           if (editingProduct) {
-            updateProduct(editingProduct.id, data.name, data.brand, data.price, data.image).then(loadData);
+            updateProduct(editingProduct.id, data.name, data.brand, data.price, data.image, data.category).then(loadData);
           } else {
-            insertProduct(data.name, data.brand, data.price, data.image).then(loadData);
+            insertProduct(data.name, data.brand, data.price, data.image,data.category).then(loadData);
           }
           setEditingProduct(null);
         }}

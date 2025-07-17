@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-import HomeScreen from '../screens/HomeScreen';
+import HomeStack from './HomeStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -35,10 +35,10 @@ const BottomTabNavigator = () => {
         };
       }}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="MyOrder" component={HomeScreen} />
-      <Tab.Screen name="Favorite" component={HomeScreen} />
-      <Tab.Screen name="MyProfile" component={HomeScreen} />
+      <Tab.Screen name="Home" component={HomeStack} />
+      <Tab.Screen name="MyOrder" component={HomeStack} />
+      <Tab.Screen name="Favorite" component={HomeStack} />
+      <Tab.Screen name="MyProfile" component={HomeStack} />
     </Tab.Navigator>
   );
 };

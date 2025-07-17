@@ -7,7 +7,7 @@ import { launchImageLibrary } from 'react-native-image-picker';
 interface Props {
   visible: boolean;
   onClose: () => void;
-  onSave: (data: { name: string; brand: string; price: number; image: string }) => void;
+  onSave: (data: { name: string; brand: string; price: number; image: string ; category: string}) => void;
   product?: any;
 }
 
@@ -16,18 +16,20 @@ const ProductFormModal: React.FC<Props> = ({ visible, onClose, onSave, product }
   const [brand, setBrand] = useState('');
   const [price, setPrice] = useState('');
   const [image, setImage] = useState('');
-
+  const [category,setcategory] = useState('');
   useEffect(() => {
     if (product) {
       setName(product.name);
       setBrand(product.brand);
       setPrice(product.price.toString());
       setImage(product.image);
+      setcategory(product.category);
     } else {
       setName('');
       setBrand('');
       setPrice('');
       setImage('');
+      setcategory('');
     }
   }, [product]);
 
@@ -62,7 +64,7 @@ const ProductFormModal: React.FC<Props> = ({ visible, onClose, onSave, product }
               style={styles.saveBtn}
               onPress={() => {
                 if (name && brand && price && image) {
-                  onSave({ name, brand, price: parseFloat(price), image });
+                  onSave({ name, brand, price: parseFloat(price), image, category });
                   onClose();
                 }
               }}>

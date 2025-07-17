@@ -19,5 +19,11 @@ import { StyleSheet } from "react-native";
   row: { flexDirection: 'row', justifyContent: 'flex-start', gap: 16, marginTop: 8 },
   addButton: { backgroundColor: '#007bff', marginHorizontal: 16, marginVertical: 10, paddingVertical: 10, borderRadius: 6, alignItems: 'center' },
   addText: { color: '#fff', fontSize: 16, fontWeight: 'bold' },
+  categoryText: {
+  fontSize: 12,
+  color: '#666',
+  marginTop: 4,
+},
+
 });
 export default StyleAdmin;

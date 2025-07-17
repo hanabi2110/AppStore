@@ -4,7 +4,11 @@ import { SafeAreaView, View, Text, FlatList, Image, StyleSheet, TouchableOpacity
 import Icon from 'react-native-vector-icons/Feather';
 import { getAllProducts } from '../src/database';
 import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../App'; 
+import styles from '../Style/StyleHome'
 
+type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'MainTab'>;
 type Product = {
   id: number;
   name: string;
@@ -15,13 +19,13 @@ type Product = {
 
 const HomeScreen = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  const navigation = useNavigation();
+  const navigation = useNavigation<HomeScreenNavigationProp>();
 
   useEffect(() => {
     getAllProducts()
       .then((data) => {
-        setProducts(data.slice(0, 6));
-        console.log("DATA FROM DB:", data);
+        setProducts(data.slice(0, 6)); 
+        console.log('DATA FROM DB:', data);
       })
       .catch(console.error);
   }, []);
@@ -44,6 +48,7 @@ const HomeScreen = () => {
       <View style={styles.safeTopSpace} />
 
       <ScrollView contentContainerStyle={styles.scrollContainer}>
+        {/* Header */}
         <View style={styles.headerTop}>
           <Image
             source={require('../asset/avatar.jpg')}
@@ -63,23 +68,29 @@ const HomeScreen = () => {
           </View>
         </View>
 
+        {/* Tabs */}
         <View style={styles.navTabs}>
           <Text style={[styles.tab, styles.activeTab]}>Home</Text>
           <Text style={styles.tab}>Category</Text>
         </View>
 
+        {/* Banner */}
         <View style={styles.banner}>
-          <Text style={styles.bannerText}>24% off shipping today on bag purchases</Text>
+          <Text style={styles.bannerText}>
+            24% off shipping today on bag purchases
+          </Text>
           <Text style={styles.bannerSub}>By Kutuku Store</Text>
         </View>
 
+        {/* Section Header */}
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>New Arrivals 🔥</Text>
-          <TouchableOpacity>
-            <Text style={styles.seeAll}>See All</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('AllProducts')}>
+          <Text>See All</Text>
           </TouchableOpacity>
         </View>
 
+        {/* Product List */}
         <FlatList
           data={products}
           renderItem={renderItem}
@@ -95,97 +106,5 @@ const HomeScreen = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff' },
-  scrollContainer: { paddingHorizontal: 16, paddingBottom: 24 },
-  safeTopSpace: {
-    height: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
-  },
-  headerTop: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 10,
-  },
-  headerTopRight: {
-    flex: 1,
-    marginLeft: 10,
-  },
-  headerIcons: {
-    flexDirection: 'row',
-    gap: 12,
-  },
-  iconBtn: {
-    marginLeft: 12,
-  },
-  greeting: { fontSize: 18, fontWeight: 'bold' },
-  subGreeting: { fontSize: 14, color: '#888' },
-  avatar: { width: 40, height: 40, borderRadius: 20 },
-  navTabs: {
-    flexDirection: 'row',
-    marginTop: 20,
-    marginBottom: 10,
-  },
-  tab: {
-    fontSize: 16,
-    marginRight: 20,
-    color: '#999',
-  },
-  activeTab: {
-    color: '#5F2EEA',
-    borderBottomWidth: 2,
-    borderColor: '#5F2EEA',
-    paddingBottom: 4,
-  },
-  banner: {
-    backgroundColor: '#EEE6FD',
-    borderRadius: 12,
-    padding: 20,
-    marginBottom: 20,
-  },
-  bannerText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#222',
-  },
-  bannerSub: { fontSize: 13, color: '#555', marginTop: 4 },
-  sectionHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 10,
-  },
-  sectionTitle: { fontSize: 16, fontWeight: 'bold' },
-  seeAll: { fontSize: 13, color: '#5F2EEA' },
-  productList: { gap: 16 },
-  productCard: {
-    width: '48%',
-    backgroundColor: '#F8F8F8',
-    borderRadius: 12,
-    padding: 10,
-    marginBottom: 16,
-    position: 'relative',
-  },
-  productImage: { width: '100%', height: 120, borderRadius: 8 },
-  productName: { fontSize: 14, fontWeight: 'bold', marginTop: 8 },
-  productBrand: { fontSize: 12, color: '#666' },
-  productPrice: { fontSize: 13, color: '#000', marginTop: 4 },
-  heartIcon: {
-    position: 'absolute',
-    top: 10,
-    right: 10,
-    backgroundColor: '#fff',
-    padding: 4,
-    borderRadius: 12,
-  },
-  bottomNav: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    paddingVertical: 12,
-    borderTopWidth: 1,
-    borderColor: '#ddd',
-  },
-});
 
 export default HomeScreen;
